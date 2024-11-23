@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ol {
+            counter-reset: item
+        }
+
+        li {
+            display: block
+        }
+
+        li:before {
+            content: counters(item, ".") " ";
+            counter-increment: item
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <ol>
+        <li>test
+            <ol>
+                <li>checking</li>
+            </ol>
+        </li>
+        <li>
+            <ol>
+                <li>checking</li>
+            </ol>
+        </li>
+    </ol>
+
+    <ol>
+        <li>one</li>
+        <li>two
+            <ol>
+                <li>two.one</li>
+                <li>two.two</li>
+                <li>two.three</li>
+            </ol>
+        </li>
+        <li>three
+            <ol>
+                <li>three.one</li>
+                <li>three.two
+                    <ol>
+                        <li>three.two.one</li>
+                        <li>three.two.two</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li>four</li>
+    </ol>
+</body>
+
+</html>
