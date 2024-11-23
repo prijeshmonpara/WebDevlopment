@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h3>autocomplete="off"</h3>
+    <form autocomplete="off">
+        <input type="text" name="username" id="username">
+        <input type="submit" name="btn-save" id="btn-save">
+    </form>
+    <h3>autocomplete="on"</h3>
+    <form autocomplete="on">
+        <input type="text" name="username" id="username">
+        <input type="submit" name="btn-save" id="btn-save">
+    </form>
+    <h3>action="login.php" redirect to server page </h3>
+    <h3>target="_blank" => new tab </h3>
+    <form action="login.php" target="_blank" autocomplete="on">
+        <input type="text" name="username" id="username">
+        <input type="submit" name="btn-save" id="btn-save">
+    </form>
+    <h3>enctype="multipart/form-data" => formm contains files must with post method only</h3>
+    <form action="login.php" method="post" enctype="multipart/form-data" target="_blank" autocomplete="on">
+        <input type="text" name="username" id="username">
+        <input type="file" name="profilepic" id="profilepic">
+        <input type="submit" name="btn-save" id="btn-save">
+    </form>
+
+    <h3>Get</h3>
+    <p>less secure</p>
+    <p>file uploading not supported</p>
+    <p>limitation of 2048 char</p>
+    <p>we can do bookmark get method url with data</p>
+    <p>faster then post</p>
+    <p>mostly used for change url with data and also in searching</p>
+    <p>appending data in URL by adding ? is called query string =>
+        07Oct_Troopy_5PM/HTML/27/02examples.html?uname=test&password=checking</p>
+    <form> <input type="text" name="uname" id="uname"><input type="password" name="password" id=""><input type="submit"
+            name="" id=""> </form>
+    <h3>POST</h3>
+    <p>secure</p>
+    <p>file uploading supported</p>
+    <p>no limitation </p>
+    <p>we can't do bookmark get method url with data</p>
+    <p>slower then get</p>
+    <p>mostly used for save data with security</p>
+    <form method="post" novalidate> <input type="text" name="uname" id="uname" required><input type="password" name="password" id=""><input
+            type="submit" name="" id=""> </form>
+</body>
+
+</html>
