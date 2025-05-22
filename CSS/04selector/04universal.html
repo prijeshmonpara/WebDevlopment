@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *{
+            color: rebeccapurple;
+        } */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<p>The universal selector is a special type selector and can therefore be namespaced when using @namespace. This is useful when dealing with documents containing multiple namespaces such as HTML with inline SVG or MathML, or XML that mixes multiple vocabularies.
+</p>
+
+<ul>
+
+    <li> ns|* - matches all elements in namespace ns</li>
+    <li> *|* - matches all elements</li>
+    <li> |* - matches all elements without any declared namespace</li>
+</ul>
+    <pre>
+        /* Selects all elements */
+        * {
+        color: green;
+        }
+    </pre>
+    <h2>example</h2>
+    <p>Something</p>
+    <span>this is the span</span>
+    <blockquote>
+        <details>
+            <summary>What do you understand by the universal sector?</summary>
+            <pre>
+                A universal selector is a selector that matches any element type's name instead of selecting elements of a particular type. 
+
+                Example: 
+
+                &lt;style>    
+
+                * {    
+
+                color: blue;    
+
+                font-size: 10px;    
+
+                }     
+
+                &lt;/style> 
+            </pre>
+        </details>
+    </blockquote>
+
+</body>
+</html>
