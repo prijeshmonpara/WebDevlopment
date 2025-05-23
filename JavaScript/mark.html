@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marks & Grade Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Marks & Grade Calculator</h2>
+  <form id="marksForm">
+    <input type="number" id="mark1" placeholder="Enter marks for Subject 1" required>
+    <input type="number" id="mark2" placeholder="Enter marks for Subject 2" required>
+    <input type="number" id="mark3" placeholder="Enter marks for Subject 3" required>
+    <input type="number" id="mark4" placeholder="Enter marks for Subject 4" required>
+    <button type="submit">Calculate</button>
+    <div class="error" id="errorMsg"></div>
+    <div class="result" id="result"></div>
+  </form>
+
+  <script>
+    document.getElementById('marksForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const mark1 = parseFloat(document.getElementById('mark1').value);
+      const mark2 = parseFloat(document.getElementById('mark2').value);
+      const mark3 = parseFloat(document.getElementById('mark3').value);
+      const mark4 = parseFloat(document.getElementById('mark4').value);
+      const errorDiv = document.getElementById('errorMsg');
+      const resultDiv = document.getElementById('result');
+
+      // Clear previous messages
+      errorDiv.textContent = '';
+      resultDiv.textContent = '';
+
+      const marks = [mark1, mark2, mark3, mark4];
+
+      // Validate marks
+      for (let i = 0; i < marks.length; i++) {
+        if (isNaN(marks[i]) || marks[i] < 0 || marks[i] > 100) {
+          errorDiv.textContent = `Error: Marks for Subject ${i + 1} must be between 0 and 100.`;
+          return;
+        }
+      }
+
+      // Calculate total and percentage
+      const total = marks.reduce((sum, mark) => sum + mark, 0);
+      const percentage = total / 4;
+
+      // Determine grade
+      let grade;
+      if (percentage >= 90) {
+        grade = 'A+';
+      } else if (percentage >= 80) {
+        grade = 'A';
+      } else if (percentage >= 70) {
+        grade = 'B';
+      } else if (percentage >= 60) {
+        grade = 'C';
+      } else if (percentage >= 50) {
+        grade = 'D';
+      } else {
+        grade = 'F';
+      }
+
+      // Display result
+      resultDiv.innerHTML = `
+        Total Marks: ${total}/400<br>
+        Percentage: ${percentage.toFixed(2)}%<br>
+        Grade: ${grade}
+      `;
+    });
+  </script>
+
+</body>
+</html>
+
