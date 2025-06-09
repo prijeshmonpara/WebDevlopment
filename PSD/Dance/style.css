@@ -1,0 +1,534 @@
+/*common css start*/
+
+body {
+    overflow-x: hidden;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid blue; */
+}
+
+.container {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.posi-rel {
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.col-33 {
+    width: 33.33;
+}
+
+.col-50 {
+    width: 50%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+/*common css end*/
+
+/*header css start*/
+
+.header {
+    background: url(./assets/images/head-img.png);
+    height: 780px;
+    width: 100%;
+}
+
+.head {
+    height: 100px;
+    background-color: #303030;
+    padding: 0 60px;
+}
+
+ul {
+    display: inline-block;
+}
+
+li {
+    list-style: none;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Oswald";
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.fa-magnifying-glass {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.title {
+    margin: 240px 0 0 120px;
+}
+
+.title-head {
+    font-size: 105px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Oswald";
+
+}
+
+.title-desc {
+    width: 600px;
+    font-size: 27px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Montserrat";
+    margin: 10px 0 40px 0;
+}
+
+.reg-btn {
+    border-radius: 4px;
+    background-color: #e8631c;
+    font-size: 29px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Oswald";
+    display: inline-block;
+    padding: 5px 50px;
+}
+
+/*header css end*/
+
+/* main section start */
+
+/* section-1 start */
+.main-section {
+    background-color: #e8631c;
+    overflow-y: hidden;
+}
+
+.sec1-title {
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: "Oswald";
+    text-align: center;
+    margin-top: 40px;
+}
+
+.sec1-desc {
+    font-size: 23px;
+    color: #ffffff;
+    font-weight: 300;
+    font-family: "Montserrat";
+    text-align: center;
+}
+
+.card {
+    margin: 50px 0 90px 0;
+    justify-content: space-around;
+}
+
+.sec1-card-size {
+    width: 372px;
+    height: 480px;
+    background-color: #303030;
+}
+
+.sec1-card-title {
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Oswald";
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.sec1-card-desc {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Montserrat";
+    text-align: center;
+}
+
+/* section-1 end */
+
+/* section-2 start */
+.sec2 {
+    background-color: #303030;
+    overflow-y: hidden;
+}
+
+.sec2-title {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: "Oswald";
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+
+.sec2-desc {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 300;
+    font-family: "Montserrat";
+    text-align: center;
+    margin: 0px 0 30px 0;
+}
+
+.sec2-card-size {
+    width: 360px;
+    height: 470px;
+    border-radius: 8px;
+    background-color: #e8631c;
+}
+
+.sec2-img {
+    margin: 70px 120px 0 120px;
+}
+
+.sec2-btn {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Oswald";
+    text-align: center;
+    border-radius: 4px;
+    background-color: #303030;
+    padding: 10px 110px;
+    margin: 0 30px;
+
+}
+
+/* section-2 end */
+
+/* section-3 start */
+.sec3 {
+    background-color: #e8631c;
+}
+
+.col-50 img {
+    max-width: 100%;
+}
+
+.sec3-title {
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: "Oswald";
+    margin: 250px 0 50px 90px;
+}
+
+.sec3-desc {
+    width: 600px;
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Montserrat";
+    margin: 0 0 50px 90px;
+}
+
+.sec3-btn {
+    font-size: 27px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Oswald";
+    border-radius: 4px;
+    background-color: #303030;
+    padding: 7px 70px;
+    margin-left: 90px;
+}
+
+/* section-3 end */
+
+/* section-4 start */
+.sec4 {
+    background-color: #e8631c;
+}
+
+.sec4-title {
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: "Oswald";
+    margin: 280px 0 40px 80px;
+}
+
+.sec4-desc {
+    width: 600px;
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Montserrat";
+    margin: 0 0 90px 80px;
+}
+
+.sec4-btn {
+    font-size: 27px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Oswald";
+    border-radius: 4px;
+    background-color: #303030;
+    padding: 7px 70px;
+    margin-left: 80px;
+}
+
+/* section-4 end */
+
+/* section-5 start */
+.sec5 {
+    background-color: #303030;
+}
+
+.sec5-title {
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: "Oswald";
+    text-align: center;
+    margin-top: 150px;
+}
+
+.sec5-desc {
+    width: 700px;
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Montserrat";
+    text-align: center;
+}
+
+.sec5-card-title {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "Oswald";
+    text-align: center;
+    margin-top: 150px;
+}
+
+.sec5-card-desc {
+    font-size: 35px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Montserrat";
+    text-align: center;
+    margin-bottom: 200px;
+}
+
+/* section-5 end */
+
+/* section-6 start */
+.sec6 {
+    background: url(assets/images/sec6-bg.png) no-repeat;
+}
+
+.sec6-title {
+    font-size: 40px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Nunito";
+    text-align: center;
+    width: 800px;
+    margin: 350px 0 50px 0;
+}
+
+.sec6-desc {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "Oswald";
+    text-align: center;
+    margin-bottom: 350px;
+}
+
+/* section-6 end */
+/* main section end */
+
+/* footer section start */
+/* foo1 start */
+.foot1 {
+    background-color: #e8631c;
+    margin-top: -12px;
+}
+
+.foot1-title {
+    font-size: 65px;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "Oswald";
+    text-align: center;
+    margin: 80px 0 20px;
+}
+
+.foot1-desc {
+    width: 800px;
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Montserrat";
+    text-align: center;
+    margin-bottom: 70px;
+
+}
+
+.foot1-email {
+    width: 549px;
+    height: 45px;
+    background-color: #ffffff;
+    border: none;
+    margin-bottom: 120px;
+    padding-left: 25px;
+
+}
+
+.foot1-sub {
+    font-size: 23px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: "Oswald";
+    text-align: center;
+    margin-left: -5px;
+    margin-top: 2px;
+    padding: 4px 30px;
+    background-color: #303030;
+    /* margin-bottom: 80px; */
+}
+
+/* foo1 end */
+/* foo2 start */
+.foot2 {
+    background-color: #303030;
+}
+
+.foot2-head {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Oswald";
+    margin: 80px 40px 20px;
+}
+
+.foot2-desc {
+    width: 450px;
+    font-size: 22px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Montserrat";
+    margin-left: 40px;
+}
+
+.foot2-head-li {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Oswald";
+    margin-left: 40px;
+}
+
+/* .foot2-desc-li {
+    font-size: 22px;
+    line-height: 44px;
+    color: #ffffff;
+    font-weight: 400;
+    margin-left: 40px;
+    font-family: "Montserrat";
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Oswald";
+} */
+
+/* .list{
+    list-style: none;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Oswald";
+} */
+
+
+.foot-last {
+    margin: 100px 0;
+    z-index: 1;
+}
+
+.foot-last li {
+    list-style: none !important;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Oswald";
+    margin-left: 32px;
+    display:flex !important;
+    /* padding: 0 10px; */
+}
+
+.social {
+    margin-top: 20px;
+    color: #ffffff;
+    margin-left: 40px;
+}
+
+.social_icon {
+    width: 30px;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+/* foo2 end */
+/* footer section end */
+/* main section end */
