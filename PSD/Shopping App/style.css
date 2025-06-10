@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.pop-reg {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.pop-med {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.pop-semi {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.pop-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.pop-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+.container{
+    width: 1450px;
+    margin: 0 auto;
+}
+.col-5{
+    width: 5%;
+}
+.col-10{
+    width: 10%;
+}
+.col-20{
+    width: 20%;
+}
+.col-15 {
+    width: 15%;
+}
+.col-16{
+    width: 16%;
+}
+.col-30{
+    width: 30%;
+}
+.col-40{
+    width: 40%;
+}
+.col-48{
+    width: 48%;
+}
+.col-50{
+    width: 50%;
+}
+.col-60 {
+    width: 60%;
+}
+.col-70{
+    width: 60%;
+}
+.col-95{
+    width: 95%;
+}
+.row{
+    display: flex;
+}
+.jcs{
+    justify-content: space-between;
+}   
+.aic{
+    align-items: center;
+}
+.po-re{
+    position: relative;
+}
+.po-ab{
+    position: absolute;
+}
+/* header */
+header{
+    padding-top: 45px;
+    /* padding-bottom: 55px; */
+}
+.iogo img{
+    width: 100%;
+}
+.nav li{
+    list-style: none;
+    display: inline-block;
+}
+.nav a{
+    font-size: 22px;
+    text-decoration: none;
+    color: #242323;
+}
+.header-right li{
+    margin-right: 65px;
+}
+.nav-button{
+    padding: 15px 20px;
+    background-color: #000000;
+    font-size: 24px;
+    color: #ffffff;
+    border-radius: 7px;
+    border: none;
+}
+/* sec one */
+.sec-one{
+    padding: 65px 0;
+}
+.one-back{
+    background-color: #F4F6F5;
+    border-radius: 60px;
+    padding: 70px 100px 0 100px;
+}
+.one-h1{
+    max-width: 474px;
+}
+.one-h1 h1{
+    font-size: 68px;
+    color: #000000;
+    z-index: 9;
+    line-height: 95px;
+}
+.one-p{
+    max-width: 660px;
+    margin: 20px 0 40px 0;
+}
+.one-p p{
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+.one-h1-ab{
+    top: -40px;
+    left: -40px;
+}
+.one-h1-ab-2{
+    bottom: 75px;
+    left: -40px;
+}
+.one-butt{
+    margin-bottom: 30px;
+}
+.one-butt button{
+    font-size: 30px;
+    letter-spacing: -1px;
+    padding: 20px 40px;
+    border-radius: 7px;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+}
+.one-img img {
+    display: block;
+    width: 100%;
+}   
+.one-po-1{
+    top: -10px;
+    left: -10px;
+}
+.one-po-2{
+    right: 150px;
+    top: 0;
+}
+.one-po-3{
+    bottom: 30px;
+}
+.one-po-4{
+    right: -5px;
+    bottom: 60px;
+}
+/* sec-two */
+.sec-two{
+    background-color: #EBD96B;
+    /* margin-bottom: 50px; */
+}
+.all-two-img{
+    padding: 50px 60px;
+}
+.all-two-img img{
+    display: inline-block;
+    /* width: 100%; */
+}
+/* sec three */
+.sec-three{
+    padding: 70px 0 170px 0;
+}
+.thr-h2 h2{
+    font-size: 48px;
+    line-height: 50px;
+    letter-spacing: 5px;
+}
+.thr-po-img{
+    top: 20px;
+    left: 250px;
+}
+.thr-bottom{
+    margin-top: 100px;
+}
+.thr-bot-img1 img{
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
+}
+.thr-bot-text h4 ,
+.thr-bot-text h2 ,
+.thr-bot-icon i
+{
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
+}
+.thr-bot-img1 img{
+    width: 100%;
+    border-radius: 20px;
+}
+.thr-bot-h2{
+    margin: 28px 0 0 0;
+}
+.thr-bot-h2 h2{
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: -2px;
+}
+.thr-bot-icon i{
+    font-size: 30px;
+}
+/* sec-four */
+.sec-four {
+    /* margin-bottom: 100px; */
+    background-image: url('./sec-four/Rectangle\ 24.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.fou-img-left img{
+    width: 100%;
+    display: block;
+}
+.fou-img-rig{
+    padding: 110px 0 50px 0;
+}
+.four-po-ing{
+    top: -35px;
+    left: 80px;
+}
+.for-rig-h2{
+    padding: 0 100px;
+}
+.for-rig-h2 h2{
+    font-size: 100px;
+    line-height: 110px;
+    color: #000000;
+}
+.fou-rig-p{
+    padding: 0 100px;
+}
+.fou-rig-p{
+    margin: 35px 0 40px 0;
+}
+.fou-rig-p p{
+    font-size: 33px;
+    line-height: 45px;
+    letter-spacing: -1px;
+    color: #231300;
+}
+.fou-rig-h3{
+    padding: 0 109px;
+}
+.fou-rig-h3 h3{
+    font-size: 33px;
+    line-height: 45px;
+    letter-spacing: 1px;
+}
+.fou-rig-p1{
+    margin-bottom: 50px;
+    padding: 0 109px;
+}
+.fou-rig-p1 p{
+    font-size: 33px;
+    line-height: 45px;
+    letter-spacing: -1px;
+}
+.fou-rig-but{
+    padding: 0 109px;
+}
+.fou-rig-but button{
+    padding: 25px 50px;
+    font-size: 28px;
+    letter-spacing: 2px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 9px;
+}
+/* sec four po start */
+.four-po-img-1{
+    top: 120px;
+    left: 90px;
+}
+.four-po-img-2{
+    right: 100px;
+    top: 60px;
+}
+.four-po-img-3{
+    bottom: 290px;
+    left: 130px;
+}
+.four-po-img-4{
+    bottom: 200px;
+    right: 80px;
+}
+/* sec four po end */
+
+/* sec five */
+.sec-five{
+    padding: 170px 0;
+}
+.five-up-po{
+    left: 318px;
+    top: 29px;
+}
+.five-up-h3 h3{
+    font-size: 44px;
+    line-height: 50px;
+    letter-spacing: 5px;
+}
+.fiv-bot-img{
+    margin: 100px 0 30px 0;
+}
+.fiv-bot-img img{
+    width: 100%;
+}
+.fiv-bot-h2 h2{
+    font-size: 32px;
+    line-height: 45px;
+    letter-spacing: -2px;
+}
+.fiv-bot-p p{
+    font-size: 20px;
+    line-height: 45px;
+    letter-spacing: -2px;
+    color: #7f7f7f;
+}
+.five-bot-arrow i{
+    font-size: 30px;
+}
+/* sec sex */
+.sec-sex{
+    padding-bottom: 170px;
+}
+.sec-sex-left{
+    padding: 0 0 0 100px;
+}
+.sex-h2 h2{
+    font-size: 48px;
+    letter-spacing: 6px;
+}
+.sex-p{
+    margin: 40px 0 65px 0;
+}
+.sex-p p{
+    font-size: 24px;
+    line-height: 35px;
+    letter-spacing: -1px;
+    padding: 0 80px 0 0;
+    color: #7c7c7c;
+}
+.sex-left-img img{
+    width: 90%;
+}
+.sex-rig-img img{
+    margin-left: 100px;
+    padding-left: 100px;
+    border-radius: 60px;
+    /* width: 100%  ; */
+}
+.sex-po-1{
+    left: 65px;
+    top: 80px;
+}
+.sex-po-2{
+    left: 115px;
+    top: 130px;
+}
+.sex-po-3{
+    left: 165px;
+    top: 180px;
+}
+.shape-1{
+    top: 90px;
+    left: 50px;
+}
+.shape-2{
+    right: 30px;
+    top: 90px;
+}
+.shape-3{
+    bottom: 40px;
+    left: 50px;
+}
+.shape-4{
+    right: 30px;
+    bottom: 80px;
+}
+/* sec-sevene */
+.sec-seve{
+    padding: 140px 0;
+    text-align: center;
+    background-color: #E5C643;
+}
+.seve-text-h2{
+    max-width: 966px;
+    margin: 0 auto;
+}
+.seve-text-h2 h2{
+    font-size: 50px;
+    line-height: 60px;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+.seve-text-p{
+    margin: 35px 0 50px;
+}
+.seve-text-p p{
+    font-size: 30px;
+    letter-spacing: 3px;
+    line-height: 30px;
+    color: #ffffff;
+}
+.seve-text-input input::placeholder{
+    color: #767676;
+}
+.seve-text-input input{
+    font-size: 20px;
+    padding: 25px 17.37rem 25px 25px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+.seve-butt{
+    right: 525px;
+    top: 10px;
+}
+.seve-butt button{
+    font-size: 30px;
+    line-height: 30px;
+    letter-spacing: 2px;
+    padding: 15px 40px;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+}
+/* footer */
+footer{
+    padding: 120px 0;
+    background-color: #000000
+}
+.foot-a-h2 h2{
+    font-size: 40px;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+.foot-a-p{
+    margin: 30px 0;
+}
+.foot-a-p p{
+    font-size: 24px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+.foot-icon-all img{
+    padding-right: 15px;
+}
+.foot-h3 h3{
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+.foot-a-ul li{
+    list-style: none;
+    margin-top: 30px;
+}
+.foot-a-ul a{
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    color: #8e8e8e;
+}
+.footer-b{
+    padding-left: 50px;
+}
