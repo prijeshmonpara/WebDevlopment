@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Hover</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <ul>
+        <li>Neo...</li>
+        <li>Qua...</li>
+        <li>Sma...</li>
+        <li>Ech...</li>
+        <li>Pix...</li>
+        <li>Ult...</li>
+        <li>Tec...</li>
+        <li>Vis...</li>
+        <li>Dat...</li>
+        <li>Wi-...</li>
+        <li>Amb...</li>
+        <li>Eve...</li>
+        <li>Sil...</li>
+        <li>Zes...</li>
+        <li>Fre...</li>
+        <li>Gol...</li>
+        <li>Ber...</li>
+        <li>Cre...</li>
+        <li>Sav...</li>
+        <li>Tan...</li>
+        <li>Nut...</li>
+        <li>Org...</li>
+        <li>Swe...</li>
+        <li>Sol...</li>
+        <li>Eth...</li>
+        <li>Urb...</li>
+        <li>Coz...</li>
+        <li>Mod...</li>
+        <li>Art...</li>
+        <li>Com...</li>
+        <li>Sus...</li>
+        <li>Hom...</li>
+    </ul>
+
+    <script>
+        const fullNames = [
+            "NeoVision Display",
+            "QuantumDrive SSD",
+            "SmartLink Wireless",
+            "EchoSound Speaker",
+            "PixelPro Camera",
+            "UltraPhone 5000",
+            "TechCore Processor",
+            "VisionPro Glasses",
+            "DataVault Hard Drive",
+            "Wi-Fi Connect",
+            "Ambiance Threads",
+            "Evergreen Style",
+            "SilkenEase Fabric",
+            "Zesty Bites Snack",
+            "FreshFlow Smoothie",
+            "GoldenGlance Coffee",
+            "BerryBloom Juice",
+            "Creamy Cloud Yogurt",
+            "SavorySpice Seasoning",
+            "Tantalizing Treats Candy",
+            "NutriBoost Bar",
+            "Organic Green Drink",
+            "Sweet Dream Cake",
+            "Solstice Home",
+            "Ethereal Living",
+            "UrbanHaven Decor",
+            "CozyCore Furniture",
+            "ModernTouch Lighting",
+            "Artful Designs",
+            "Comfort Zone Furniture",
+            "Sustainable Living",
+            "Home & Hearth"
+        ];
+
+        $(document).ready(function () {
+            $('li').each(function (index) {
+                const shortText = $(this).text();
+                const fullText = fullNames[index];
+
+                $(this).hover(
+                    function () {
+                        $(this).text(fullText);
+                    },
+                    function () {
+                        $(this).text(shortText);
+                    }
+                );
+            });
+        });
+    </script>
+</body>
+</html>
