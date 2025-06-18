@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form onsubmit="event.preventDefault(); validateMyForm();">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" name="username" onblur="checkreq(this)" id="username" placeholder="Enter username" required> 
+            <label class="error" id="username-error"></label>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" onblur="checkreq(this)" id="email" placeholder="example@email.com" required> 
+            <label class="error" id="email-error"></label>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" onblur="checkreq(this)" id="password" placeholder="Enter password" required>
+            <label class="error" id="password-error"></label>
+        </div>
+        
+        <div class="form-group">
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" name="mobile" onblur="checkreq(this)" 
+                   oninput="formatPhoneNumber(this)" 
+                   onkeypress="return onlyNumberKey(event)"
+                   id="mobile" placeholder="Enter 10-digit number" 
+                   maxlength="12" required>
+            <label class="error" id="mobile-error"></label>
+        </div>
+        
+        <div class="form-group">
+            <label for="fname">First Name:</label>
+            <input type="text" name="fname" onblur="checkreq(this)" id="fname" placeholder="Enter first name" required>
+            <label class="error" id="fname-error"></label>
+        </div>
+        
+        <div class="form-group">
+            <label for="lname">Last Name:</label>
+            <input type="text" name="lname" onblur="checkreq(this)" id="lname" placeholder="Enter last name" required>
+            <label class="error" id="lname-error"></label>
+        </div>
+        
+        <input type="submit" value="Submit" class="submit-btn">
+    </form>
+
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            padding: 8px;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-left: 10px;
+            display: block;
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    <script>
+        function onlyNumberKey(evt) {
+            // Only ASCII character in that range allowed
+            var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+            if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                return false;
+            return true;
+        }
+
+        function formatPhoneNumber(input) {
+            // Remove all non-digit characters
+            let value = input.value.replace(/\D/g, '');
+            
+            // Format the number as XXX-XXX-XXXX
+            if (value.length >= 3) {
+                value = value.slice(0,3) + "-" + value.slice(3);
+            }
+            if (value.length >= 7) {
+                value = value.slice(0,7) + "-" + value.slice(7);
+            }
+            
+            // Limit to 12 characters (including hyphens)
+            value = value.slice(0,12);
+            
+            input.value = value;
+        }
+
+        function checkreq(input) {
+            const value = input.value.trim();
+            const errorElement = document.getElementById(`${input.id}-error`);
+            
+            // Common required field validation
+            if (value === "") {
+                errorElement.innerText = "This field is required";
+                return false;
+            }
+
+            // Specific validation rules for each field type
+            switch(input.id) {
+                case 'username':
+                    const usernamePattern = /^[a-zA-Z0-9_]{3,20}$/;
+                    if (!usernamePattern.test(value)) {
+                        errorElement.innerText = "Username must be 3-20 characters and can only contain letters, numbers, and underscore";
+                        return false;
+                    }
+                    break;
+
+                case 'email':
+                    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                    if (!emailPattern.test(value)) {
+                        errorElement.innerText = "Please enter a valid email address";
+                        return false;
+                    }
+                    break;
+                
+                case 'mobile':
+                    const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+                    if (!phonePattern.test(value)) {
+                        errorElement.innerText = "Please enter a valid 10-digit phone number";
+                        return false;
+                    }
+                    break;
+                
+                case 'password':
+                    if (value.length < 6) {
+                        errorElement.innerText = "Password must be at least 6 characters long";
+                        return false;
+                    }
+                    const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{6,}$/;
+                    if (!passwordPattern.test(value)) {
+                        errorElement.innerText = "Password must contain at least one letter and one number";
+                        return false;
+                    }
+                    break;
+                
+                case 'fname':
+                case 'lname':
+                    const namePattern = /^[A-Za-z]{2,30}$/;
+                    if (!namePattern.test(value)) {
+                        errorElement.innerText = "Please enter only letters (2-30 characters)";
+                        return false;
+                    }
+                    break;
+            }
+            
+            // Clear error message if validation passes
+            errorElement.innerText = "";
+            return true;
+        }
+
+        let validateMyForm = () => {
+            const inputs = document.querySelectorAll('input[required]');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                if (!checkreq(input)) {
+                    isValid = false;
+                }
+            });
+
+            if (isValid) {
+                console.log("Form is valid, ready to submit!");
+                // You can add form submission logic here
+                alert("Form submitted successfully!");
+            } else {
+                console.log("Form has validation errors");
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <form action="" method="get"></form>
+    <form action="" method="post" enctype="multipart/form-data"> <input type="file" name="" id=""></form> -->
+
+    <form action="" method="post">
+        <!-- <input type="text" name="" id="">
+        <input type="submit" name="" id=""> -->
+    </form>
+    <form onsubmit="event.preventDefault();  checkreq();">
+        <!-- <form action="" method="post"> -->
+        <input type="text" name="username" onblur="checkreq()" id="username" required> <label for=""
+            id="uname-error"></label><br>
+        <input type="email" name="email"  onblur="checkreq()"
+            id="email" required><br>
+        <input type="password" name="password" onblur="checkreq()" id="password"><br>
+        <input type="tel" name="mobile" minlength="" maxlength="" onblur="checkreq()" id="mobile"><br>
+        <input type="fname" name="fname" onblur="checkreq()" id="fname"><br>
+        <input type="lname" name="lname" id="lname"><br>
+        <input type="submit" name="" id="">
+    </form>
+    only numbers will be entered
+    mobile number masking
+
+    <script>
+        function checkreq() {
+            let uname = document.getElementById("username").value 
+            // console.log(uname);
+            if (uname == "") {
+                document.getElementById("uname-error").innerText = "This field is reuqired"
+            } else {
+                document.getElementById("uname-error").innerText = ""
+            }
+        }
+        // Get the form by ID or selector
+        const form = document.querySelector("form"); // or use getElementById("your-form-id")
+
+        // Get all input elements inside the form
+        const inputs = form.querySelectorAll("input");
+
+        // Add class "checkreq" to each input
+        inputs.forEach(input => {
+            input.classList.add("checkreq");
+        
+         if (isValid) {
+                alert("The form is submitted");
+            } else {
+                alert("The form is not valid");
+            }
+
+            return isValid;
+             });
+    </script>
+
+</body>
+
+</html>
