@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Counter Stats</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    
+    .counter-box {
+      display: inline-block;
+      margin: 20px;
+    }
+    .number {
+      font-size: 48px;
+      font-weight: bold;
+    }
+    .label {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="counter-section">
+    <div class="counter-box">
+      <div class="number" data-target="2130">0</div>
+      <div class="label">Client</div>
+    </div>
+    <div class="counter-box">
+      <div class="number" data-target="2000">0</div>
+      <div class="label">Team Worker</div>
+    </div>
+    <div class="counter-box">
+      <div class="number" data-target="904">0</div>
+      <div class="label">Projects</div>
+    </div>
+    <div class="counter-box">
+      <div class="number" data-target="120">0</div>
+      <div class="label">Awards</div>
+    </div>
+  </div>
+
+  <script>
+    const counters = document.querySelectorAll('.number');
+    const speed = 200; // lower is faster
+
+    for (let i = 0; i < counters.length; i++) {
+      const updateCount = () => {
+        const target = +counters[i].getAttribute('data-target');
+        const count = +counters[i].innerText;
+        const increment = Math.ceil(target / speed);
+
+        if (count < target) {
+          counters[i].innerText = count + increment;
+          setTimeout(updateCount, 20);
+        } else {
+          counters[i].innerText = target;
+        }
+      };
+
+      updateCount();
+    }
+  </script>
+
+</body>
+</html>

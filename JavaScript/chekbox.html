@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi Filter System</title>
+  <style>
+    body { font-family: sans-serif; background: #f5f5f5; padding: 20px; }
+    .filters, .products { margin-bottom: 20px; }
+    .filters h3 { margin-bottom: 5px; }
+    .product {
+      background: white;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="filters">
+    <h3>Category</h3>
+    <label><input type="checkbox" class="category" value="dress"> Dress</label>
+    <label><input type="checkbox" class="category" value="shoes"> Shoes</label>
+    <label><input type="checkbox" class="category" value="watch"> Watch</label>
+
+    <h3>Price</h3>
+    <label><input type="checkbox" class="price" value="under100"> Under ₹100</label>
+    <label><input type="checkbox" class="price" value="100to500"> ₹100–₹500</label>
+    <label><input type="checkbox" class="price" value="above500"> Above ₹500</label>
+  </div>
+
+  <div class="products" id="productList">
+    <!-- Products will be shown here -->
+  </div>
+
+  <script>
+    const products = [
+      { name: "Red Dress", category: "dress", price: 99 },
+      { name: "Party Dress", category: "dress", price: 400 },
+      { name: "Running Shoes", category: "shoes", price: 250 },
+      { name: "Luxury Watch", category: "watch", price: 1200 },
+      { name: "Casual Shoes", category: "shoes", price: 90 },
+      { name: "Digital Watch", category: "watch", price: 80 }
+    ];
+
+    const productList = document.getElementById("productList");
+
+    const categoryCheckboxes = document.querySelectorAll(".category");
+    const priceCheckboxes = document.querySelectorAll(".price");
+
+    categoryCheckboxes.forEach(cb => cb.addEventListener('change', filterProducts));
+    priceCheckboxes.forEach(cb => cb.addEventListener('change', filterProducts));
+
+    function filterProducts() {
+      const selectedCategories = Array.from(categoryCheckboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+
+      const selectedPrices = Array.from(priceCheckboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+
+      const filtered = products.filter(p => {
+        const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(p.category);
+
+        let priceMatch = false;
+        if (selectedPrices.length === 0) {
+          priceMatch = true;
+        } else {
+          for (let range of selectedPrices) {
+            if (range === "under100" && p.price < 100) priceMatch = true;
+            if (range === "100to500" && p.price >= 100 && p.price <= 500) priceMatch = true;
+            if (range === "above500" && p.price > 500) priceMatch = true;
+          }
+        }
+
+        return categoryMatch && priceMatch;
+      });
+
+      showProducts(filtered);
+    }
+
+    function showProducts(list) {
+      productList.innerHTML = '';
+      if (list.length === 0) {
+        productList.innerHTML = "<p>No matching products found.</p>";
+        return;
+      }
+
+      list.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'product';
+        div.innerHTML = `<strong>${p.name}</strong><br>Category: ${p.category}<br>Price: ₹${p.price}`;
+        productList.appendChild(div);
+      });
+    }
+
+    // Load all initially
+    showProducts(products);
+  </script>
+
+</body>
+</html>
