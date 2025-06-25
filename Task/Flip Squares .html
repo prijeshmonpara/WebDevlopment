@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flip Squares Outward</title>
+<style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #fff;
+}
+
+.main {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.9s ease;
+  transform-origin: center;
+}
+
+/* Positions and origins */
+.top-left {
+  top: 0;
+  left: 0;
+  background-color: red;
+  transform-origin: top left;
+}
+
+.top-right {
+  top: 0;
+  left: 100px;
+  background-color: yellow;
+  color: black;
+  transform-origin: top right;
+}
+
+.bottom-left {
+  top: 100px;
+  left: 0;
+  background-color: blue;
+  transform-origin: bottom left;
+}
+
+.bottom-right {
+  top: 100px;
+  left: 100px;
+  background-color: green;
+  transform-origin: bottom right;
+}
+
+/* Rotate on hover */
+.main:hover .top-left {
+  transform: rotate(180deg);
+}
+
+.main:hover .top-right {
+  transform: rotate(-180deg);
+}
+
+.main:hover .bottom-left {
+  transform: rotate(-180deg);
+}
+
+.main:hover .bottom-right {
+  transform: rotate(180deg);
+}
+.text{
+    position: absolute;
+    z-index: -1;
+}
+
+</style>
+</head>
+<body>
+
+<div class="main">
+  <div class="square top-left"></div>
+  <div class="square top-right"></div>
+  <div class="square bottom-left"></div>
+  <div class="square bottom-right"></div>
+</div>
+<div class="text">
+    <h1>राधे! कृष्णः</h1>
+</div>
+
+
+</body>
+</html>
