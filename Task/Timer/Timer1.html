@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Minute Timer</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      margin-top: 50px;
+    }
+
+    .controls {
+      margin-bottom: 20px;
+    }
+
+    input[type="number"] {
+      font-size: 20px;
+      padding: 5px 10px;
+      width: 80px;
+      text-align: center;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 6px 15px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .timer-wrapper {
+      margin-top: 30px;
+      width: 150px;
+      height: 150px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .timer-svg {
+      transform: rotate(-90deg);
+    }
+
+    circle {
+      fill: none;
+      stroke-width: 10;
+    }
+
+    .bg {
+      stroke: #ddd;
+    }
+
+    .progress {
+      stroke: #3498db;
+      stroke-linecap: round;
+      stroke-dasharray: 440;
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 1s linear;
+    }
+
+    .time-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="controls">
+    <input type="number" id="minute-input" min="1" max="999" value="" />
+    <button onclick="startTimer()">▶ Start</button>
+  </div>
+
+  <div class="timer-wrapper">
+    <svg class="timer-svg" width="150" height="150">
+      <circle class="bg" cx="75" cy="75" r="70"/>
+      <circle class="progress" cx="75" cy="75" r="70"/>
+    </svg>
+    <div class="time-text" id="countdown">00:00</div>
+  </div>
+
+  <script>
+    const countdownText = document.getElementById("countdown");
+    const progressCircle = document.querySelector(".progress");
+    const fullDashArray = 440;
+    let intervalId = null;
+
+    function startTimer() {
+      clearInterval(intervalId); // clear previous if running
+
+      const input = document.getElementById("minute-input");
+      const totalMinutes = parseInt(input.value);
+
+      if (isNaN(totalMinutes) || totalMinutes <= 0) {
+        alert("Enter a valid minute value.");
+        return;
+      }
+
+      let totalTime = totalMinutes * 60;
+
+      progressCircle.style.strokeDasharray = fullDashArray;
+      progressCircle.style.strokeDashoffset = 0;
+
+      function update() {
+        const minutes = Math.floor(totalTime / 60);
+        const seconds = totalTime % 60;
+        countdownText.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+        const offset = fullDashArray - (fullDashArray * ((totalMinutes * 60 - totalTime) / (totalMinutes * 60)));
+        progressCircle.style.strokeDashoffset = offset;
+
+        if (totalTime <= 0) {
+          clearInterval(intervalId);
+          countdownText.textContent = "Time's up!";
+        }
+
+        totalTime--;
+      }
+
+      update(); // start immediately
+      intervalId = setInterval(update, 1000);
+    }
+  </script>
+
+</body>
+</html>
