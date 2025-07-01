@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text to Speech</title>
+ <link rel="stylesheet" href="style.css"
+</head>
+<body>
+  <div class="container">
+    <h2>SIMPLE TEXT TO SPEECH 🗨</h2>
+    <div class="input-box">
+      <input type="text" id="text" placeholder="Type Something...">
+      <button onclick="speechSynthesis.speak(new SpeechSynthesisUtterance(text.value))">
+        🔊
+      </button>
+    </div>
+  </div>
+</body>
+</html>
