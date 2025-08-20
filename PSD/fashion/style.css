@@ -1,0 +1,1003 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Bahnschrift', Arial, sans-serif;
+            line-height: 1.6;
+            color: #151515;
+            background-color: #fde4e7;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fade-in-img {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .fade-in-img.loaded {
+            opacity: 1;
+        }
+        
+        button {
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        
+    
+        .container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        
+        .section-wrapper {
+            width: 100%;
+        }
+        
+        .promo-banner {
+            background-color: #f27b9a;
+            padding: 6px;
+            text-align: center;
+        }
+        
+        .promo-text {
+            font-size: 14px;
+            font-family: 'Bahnschrift';
+            font-weight: 700;
+            line-height: 25px;
+            color: #ffffff;
+            margin-top: 4px;
+        }
+        
+        .hero-section {
+            background: transparent;
+            position: relative;
+            min-height: 80vh;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 24px;
+        }
+        .hero-slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0;
+            transition: opacity 0.7s ease;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0; left: 0;
+            z-index: 1;
+            border-radius: 24px;
+        }
+        .hero-slide .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            padding: 0 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-slide .hero-title,
+        .hero-slide .hero-description,
+        .hero-slide .btn-primary {
+            text-shadow: 0 2px 16px rgba(0,0,0,0.25);
+        }
+        
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .logo {
+            width: 120px;
+            height: auto;
+        }
+        
+        .nav-menu {
+            display: none;
+        }
+        
+        .nav-icons {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        
+        .nav-icons img {
+            width: 18px;
+            height: 18px;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            margin-top: 120px;
+        }
+        
+        .hero-title {
+            font-size: 36px;
+            font-family: 'Abel', sans-serif;
+            font-weight: 400;
+            line-height: 1.3;
+            color: #ffffff;
+        }
+        
+        .hero-description {
+            font-size: 16px;
+            font-family: 'Bahnschrift';
+            font-weight: 400;
+            line-height: 1.5;
+            color: #ffffff;
+            max-width: 90%;
+        }
+        
+        .btn-primary {
+            background-color: #ffffff;
+            color: #353333;
+            font-size: 16px;
+            font-family: 'Bahnschrift';
+            font-weight: 700;
+            line-height: 27px;
+            padding: 14px 30px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #f3f4f6;
+            transform: scale(1.05);
+        }
+        
+        .btn-secondary {
+            background-color: #f27b9a;
+            color: #ffffff;
+            font-size: 16px;
+            font-family: 'Bahnschrift';
+            font-weight: 700;
+            line-height: 27px;
+            padding: 14px 30px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e5679a;
+            transform: scale(1.05);
+        }
+        
+        .pagination-dots {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 6px;
+            background-color: #ffffff;
+        }
+        
+        .dot.inactive {
+            background-color: transparent;
+            border: 2px solid #ffffff;
+        }
+        
+        .collections-section {
+            margin-top: 102px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            align-items: center;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-family: 'Baskerville Old Face', serif;
+            font-weight: 400;
+            line-height: 54px;
+            color: #a52754;
+            text-align: center;
+        }
+        
+        .collections-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+        
+        .collection-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .collection-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .collection-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+        }
+        
+        .collection-title {
+            font-size: 24px;
+            font-family: 'Bahnschrift';
+            font-weight: 400;
+            line-height: 44px;
+            color: #ffffff;
+        }
+        
+        .new-arrivals-section {
+            margin-top: 104px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        
+        .section-header {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            font-family: 'Bahnschrift';
+            font-weight: 400;
+            line-height: 27px;
+            color: #151515;
+        }
+        
+        .nav-arrows {
+            display: flex;
+            gap: 28px;
+            align-self: flex-end;
+        }
+        
+        .nav-arrow {
+            width: 34px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-arrow:hover {
+            transform: scale(1.1);
+        }
+        
+        .products-grid {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding-bottom: 10px;
+        }
+        
+        .products-grid::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            min-width: 280px;
+            flex-shrink: 0;
+        }
+        
+        .product-image-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 400/534;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .quick-view {
+            position: absolute;
+            bottom: 14px;
+            right: 14px;
+            width: 44px;
+            height: 46px;
+        }
+        
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            align-items: center;
+        }
+        
+        .product-name {
+            font-size: 18px;
+            font-family: 'Bahnschrift';
+            font-weight: 400;
+            line-height: 25px;
+            text-align: center;
+            text-transform: capitalize;
+            color: #151515;
+        }
+        
+        .product-price {
+            font-size: 20px;
+            font-family: 'Bahnschrift';
+            font-weight: 700;
+            line-height: 27px;
+            text-align: center;
+            text-transform: capitalize;
+            color: #151515;
+        }
+        
+        .promo-section {
+            margin-top: 44px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .promo-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .promo-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .promo-title {
+            font-size: 28px;
+            font-family: 'Baskerville Old Face', serif;
+            font-weight: 400;
+            line-height: 54px;
+            color: #a52754;
+        }
+        
+        .promo-description {
+            font-size: 16px;
+            font-family: 'Bahnschrift';
+            font-weight: 400;
+            line-height: 1.7;
+            color: #151515;
+        }
+        
+        .faq-section {
+            margin-top: 158px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        .faq-item {
+            border: 2px solid #151515;
+            padding: 22px;
+        }
+        
+        .faq-item.active {
+            background-color: #a52754;
+            border-color: #a52754;
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .faq-question-text {
+            font-size: 18px;
+            font-family: 'Bahnschrift';
+            font-weight: 700;
+            line-height: 25px;
+            color: #151515;
+        }
+        
+        .faq-item.active .faq-question-text {
+            color: #ffffff;
+        }
+        
+        .faq-arrow {
+            width: 22px;
+            height: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            font-size: 16px;
+            font-family: 'Bahnschrift';
+            font-weight: 400;
+            line-height: 27px;
+            color: #ffffff;
+            margin-top: 22px;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .contact-title {
+            font-size: 32px;
+            font-family: 'Baskerville Old Face', serif;
+            font-weight: 400;
+            line-height: 46px;
+            color: #a52754;
+        }
+        
+        .contact-description {
+            font-size: 18px;
+            font-family: 'Bahnschrift';
+            font-weight: 400;
+            line-height: 1.7;
+            color: #151515;
+            max-width: 600px;
+        }
+        
+        .footer {
+            background-color: #a52754;
+            padding: 40px 0;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            color: #ffffff;
+        }
+        
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 46px;
+        }
+        
+        .footer-logo {
+            width: 120px;
+            height: auto;
+        }
+        
+        .footer-nav {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+        
+        .footer-nav-item {
+            font-size: 18px;
+            font-family: 'Bahnschrift';
+            font-weight: 400;
+            line-height: 27px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 14px;
+        }
+        
+        .footer-social img {
+            width: 36px;
+            height: 36px;
+        }
+        
+        .newsletter {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .newsletter-title {
+            font-size: 22px;
+            font-family: 'Bahnschrift';
+            font-weight: 700;
+            line-height: 32px;
+            color: #ffffff;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            border: 1px solid #ffffff;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 14px 18px;
+            color: #ffffff;
+            font-size: 16px;
+        }
+        
+        .newsletter-input::placeholder {
+            color: #ffffff;
+            text-transform: capitalize;
+        }
+        
+        .newsletter-btn {
+            background: transparent;
+            color: #ffffff;
+            font-size: 18px;
+            font-family: 'Bahnschrift';
+            font-weight: 700;
+            line-height: 27px;
+            padding: 14px 30px;
+            border-left: 2px solid #ffffff;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+        }
+        
+        .contact-text {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22px;
+            color: #ffffff;
+        }
+        
+        .footer-divider {
+            width: 100%;
+            height: 2px;
+            background-color: #ffffff;
+            margin: 80px 0 40px 0;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .copyright {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .copyright-text {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 26px;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        .payment-methods {
+            width: 378px;
+            height: auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .footer-link {
+            font-size: 16px;
+            font-family: 'Bahnschrift';
+            font-weight: 400;
+            line-height: 25px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        
+        .faq-item:hover {
+            background-color: #f3f4f6;
+        }
+        
+        .faq-item.active:hover {
+            background-color: #a52754;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        
+        .collection-card:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+        
+        /* Responsive media queries */
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 24px;
+            }
+            
+            .promo-text {
+                font-size: 16px;
+            }
+            
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .hero-description {
+                font-size: 18px;
+                max-width: 70%;
+            }
+            
+            .btn-primary, .btn-secondary {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 38px;
+            }
+            
+            .collections-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .collection-card {
+                height: 400px;
+            }
+            
+            .products-grid {
+                display: flex;
+                overflow-x: auto;
+            }
+            
+            .product-card {
+                flex-shrink: 0;
+            }
+            
+            .promo-section {
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+            }
+            
+            .promo-image {
+                height: 400px;
+            }
+            
+            .promo-title {
+                font-size: 36px;
+            }
+            
+            .promo-description {
+                font-size: 18px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 32px;
+            }
+            
+            .hero-section {
+                min-height: 90vh;
+            }
+            
+            .nav-menu {
+                display: flex;
+                gap: 28px;
+                align-items: center;
+            }
+            
+            .nav-link {
+                font-size: 18px;
+                font-family: 'Bahnschrift';
+                font-weight: 400;
+                line-height: 25px;
+                text-transform: capitalize;
+                color: #fde4e7;
+                text-decoration: none;
+                transition: color 0.3s, background 0.3s, text-decoration 0.3s;
+                padding: 4px 12px;
+                border-radius: 8px;
+            }
+            
+            .nav-link:hover, .nav-link:focus {
+                color: #fff;
+                background: #f27b9a;
+                text-decoration: underline;
+                outline: none;
+            }
+            
+            .hero-title {
+                font-size: 56px;
+            }
+            
+            .hero-description {
+                font-size: 20px;
+                max-width: 60%;
+            }
+            
+            .section-title {
+                font-size: 42px;
+            }
+            
+            .products-grid {
+                display: flex;
+                overflow-x: auto;
+            }
+            
+            .product-name {
+                font-size: 20px;
+            }
+            
+            .product-price {
+                font-size: 22px;
+            }
+            
+            .faq-question-text {
+                font-size: 20px;
+            }
+            
+            .faq-answer {
+                font-size: 18px;
+            }
+            
+            .contact-title {
+                font-size: 38px;
+            }
+            
+            .contact-description {
+                font-size: 20px;
+            }
+            
+            .footer-nav {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .footer-nav-item {
+                font-size: 20px;
+            }
+            
+            .newsletter-title {
+                font-size: 24px;
+            }
+            
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 48px;
+            }
+            
+            .promo-text {
+                font-size: 20px;
+            }
+            
+            .hero-title {
+                font-size: 60px;
+            }
+            
+            .hero-description {
+                font-size: 22px;
+                max-width: 38%;
+            }
+            
+            .btn-primary, .btn-secondary {
+                font-size: 22px;
+            }
+            
+            .section-title {
+                font-size: 46px;
+            }
+            
+            .section-subtitle {
+                font-size: 22px;
+            }
+            
+            .products-grid {
+                display: flex;
+                overflow-x: auto;
+            }
+            
+            .promo-title {
+                font-size: 46px;
+            }
+            
+            .promo-description {
+                font-size: 20px;
+            }
+            
+            .contact-title {
+                font-size: 46px;
+            }
+            
+            .newsletter-title {
+                font-size: 26px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .logo {
+                width: 172px;
+            }
+            
+            .footer-logo {
+                width: 172px;
+            }
+        }
+
+@media (max-width: 600px) {
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .contact-item {
+    justify-content: center;
+    gap: 8px;
+  }
+  .contact-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .contact-text {
+    font-size: 14px;
+  }
+  .footer-nav {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .footer-logo {
+    width: 100px;
+  }
+  .newsletter-title {
+    font-size: 18px;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .newsletter-input, .newsletter-btn {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 12px;
+    align-items: center;
+  }
+  .footer-links {
+    gap: 10px;
+  }
+  .payment-methods {
+    width: 180px;
+  }
+  .hero-content {
+    margin-top: 60px;
+    align-items: center;
+    text-align: center;
+  }
+}
